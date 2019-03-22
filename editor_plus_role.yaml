@@ -1,0 +1,22 @@
+title: "Editor Plus"
+description: "Added privileges from project owner role for create and edit capabilities to enhance the project editor role"
+stage: "ALPHA"
+includedPermissions:
+- appengine.applications.create
+- container.clusterRoleBindings.create
+- container.clusterRoles.create
+- container.localSubjectAccessReviews.create
+- container.roleBindings.create
+- container.roles.create
+- container.subjectAccessReviews.create
+- iam.roles.create
+- source.repos.create
+- appengine.versions.getFileContents
+- iap.tunnel.getIamPolicy
+- iap.tunnelInstances.getIamPolicy
+- iap.tunnelZones.getIamPolicy
+- iap.web.getIamPolicy
+- iap.webServiceVersions.getIamPolicy
+- iap.webServices.getIamPolicy
+- iap.webTypes.getIamPolicy
+- source.repos.getProjectConfig
