@@ -1,21 +1,20 @@
 #Add editor role for a user to a project replace with your projectid and user email
 #gcloud projects add-iam-policy-binding [projectId] --member='user:info@user.com' --role='roles/editor'
-
-#example command 
+#example command
 gcloud projects add-iam-policy-binding p2f-prod --member='user:tsawyer@pump2flex.com' --role='roles/editor'
 
+#create custom roles
 #create the custom role called editorPlus in the organization and load from a yaml file
 #gcloud iam roles create editorPlus --organization [org-id] --file editor_plus_role.yaml
 
 #example command
 gcloud iam roles create editorPlus --organization 120671333310 --file editor_plus_role.yaml
 
-#bind the role to ONLY a folder for any users who are authenticated via google (all projects under this folder will inherit the role and permissions)
-
+#bind roles to folder
+#bind the role to ONLY a folder for any users who are authenticated via google (all projects under this folder #will inherit the role and permissions) - replace with your folder-id and org-id 
 #gcloud resource-manager folders add-iam-policy-binding [folder-id] --member='group:allAuthenticatedUsers' --#role=organizations/[org-id]/roles/editorPlus
 
-
-#example command this adds custom editorPlus role to all authenticated users in the projects uneder the folder - replace with your folder-id and org-id 
+#example command 
 gcloud resource-manager folders add-iam-policy-binding 472797622797 --member='group:allAuthenticatedUsers' --role=organizations/120671333310/roles/editorPlus
 
 
