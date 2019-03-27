@@ -10,11 +10,14 @@ gcloud projects add-iam-policy-binding p2f-prod --member='user:tsawyer@pump2flex
 #example command
 gcloud iam roles create editorPlus --organization 120671333310 --file editor_plus_role.yaml
 
+
+#For this step you can create a group and assign users or you can assign per user account?  
+
 #bind roles to folder
-#bind the role to ONLY a folder for any users who are authenticated via google (all projects under this folder #will inherit the role and permissions) - replace with your folder-id and org-id 
-#gcloud resource-manager folders add-iam-policy-binding [folder-id] --member='group:allAuthenticatedUsers' --#role=organizations/[org-id]/roles/editorPlus
+#bind the role to ONLY a folder for any users in the "temp_training" group (all projects under this folder #will inherit the role and permissions) - replace with your folder-id and org-id 
+#gcloud resource-manager folders add-iam-policy-binding [folder-id] --member='group:temp_training@user.com' --#role=organizations/[org-id]/roles/editorPlus
 
 #example command 
-gcloud resource-manager folders add-iam-policy-binding 472797622797 --member='group:allAuthenticatedUsers' --role=organizations/120671333310/roles/editorPlus
+gcloud resource-manager folders add-iam-policy-binding 472797622797 --member='temp_training@user.com' --role=organizations/120671333310/roles/editorPlus
 
 
